@@ -57,6 +57,8 @@ func App() *buffalo.App {
 		app.GET("/", HomeHandler)
 
 		app.ServeFiles("/assets", assetsBox)
+		app.Resource("/bands", BandsResource{})
+		app.Resource("/members", MembersResource{})
 	}
 
 	return app
